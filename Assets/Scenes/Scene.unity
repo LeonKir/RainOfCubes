@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d75a450d4144c44cbbf6f43af57e74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 4809446579494266960, guid: f4788a7293b4e1d43b92bdbfa07c94ba, type: 3}
+  _prefab: {fileID: 6833707841436607907, guid: f4788a7293b4e1d43b92bdbfa07c94ba, type: 3}
   _boxCollider: {fileID: 1131293954}
   _repeatRate: 0.1
   _poolCapacity: 0
@@ -297,6 +297,7 @@ GameObject:
   - component: {fileID: 1509257000}
   - component: {fileID: 1509256999}
   - component: {fileID: 1509256998}
+  - component: {fileID: 1509257001}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Ground
@@ -378,6 +379,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1509257001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509256997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7500c93e788c24e44a45d39aa0cc1ef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1668743024
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +403,7 @@ GameObject:
   - component: {fileID: 1668743027}
   - component: {fileID: 1668743026}
   - component: {fileID: 1668743025}
+  - component: {fileID: 1668743029}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Ground
@@ -484,6 +498,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -3.875, y: 57.447, z: -40.811}
+--- !u!114 &1668743029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668743024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7500c93e788c24e44a45d39aa0cc1ef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1951126432
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,6 +522,7 @@ GameObject:
   - component: {fileID: 1951126435}
   - component: {fileID: 1951126434}
   - component: {fileID: 1951126433}
+  - component: {fileID: 1951126437}
   m_Layer: 0
   m_Name: Plane (1)
   m_TagString: Ground
@@ -590,6 +617,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50.311, y: 219.682, z: -0.921}
+--- !u!114 &1951126437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951126432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7500c93e788c24e44a45d39aa0cc1ef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2135538255
 GameObject:
   m_ObjectHideFlags: 0
