@@ -77,10 +77,12 @@ public class GameObjectSpawner : MonoBehaviour
 
     private IEnumerator SpawnRoutine()
     {
-        while (true)
+        WaitForSeconds waitForSeconds = new WaitForSeconds(_repeatRate);
+
+        while (enabled)
         {
             SpawnCube();
-            yield return new WaitForSeconds(_repeatRate);
+            yield return waitForSeconds;
         }
     }
 
