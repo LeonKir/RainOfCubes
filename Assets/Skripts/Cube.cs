@@ -1,25 +1,47 @@
 using System;
-using System.Collections;
 using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
     public event Action<Cube> ReturnRequested;
 
+    private bool _isColorChangedThisLife;
+    private Coroutine _returnCoroutine;
+
     [SerializeField] private Color _color = Color.white;
+
+    public bool IsColorChangedThisLife
+    {
+        get => _isColorChangedThisLife;
+        private set => _isColorChangedThisLife = value;
+    }
+
+    public void SetColorChangedThisLife(bool colorChangedThisLife)
+    {
+        _isColorChangedThisLife = colorChangedThisLife;
+    }
+
+    public Coroutine ReturnCoroutine
+    {
+        get => _returnCoroutine;
+        private set => _returnCoroutine = value;
+    }
+
+    public void SetReturnCoroutine(Coroutine returnCoroutine)
+    {
+        _returnCoroutine = returnCoroutine;
+    }
 
     private Renderer _renderer;
     private Rigidbody _rigidbody;
-    private bool _colorChangedThisLife;
-    private Coroutine _returnCoroutine;
 
-    public void ResetColor()
+    private void ResetColor()
     {
         if (_renderer != null)
             _renderer.material.color = _color;
     }
 
-    public void ResetPhysicsAndTransform()
+    private void ResetPhysicsAndTransform()
     {
         if (_rigidbody != null)
         {
@@ -40,45 +62,23 @@ public class Cube : MonoBehaviour
 
     private void OnEnable()
     {
-        _colorChangedThisLife = false;
-        _returnCoroutine = null;
+        SetColorChangedThisLife(false);
+        SetReturnCoroutine(null);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void RequestReturn()
     {
-        float minDeliteMinyte = 2f;
-        float maxDeliteMinyte = 5f;
-
-        if (collision.collider.TryGetComponent<Ground>(out _))
-        {
-            if (!_colorChangedThisLife && _renderer != null)
-            {
-                _renderer.material.color = UnityEngine.Random.ColorHSV();
-                _colorChangedThisLife = true;
-            }
-
-            if (_returnCoroutine == null)
-                _returnCoroutine = StartCoroutine(ReturnAfterDelay(UnityEngine.Random.Range(minDeliteMinyte, maxDeliteMinyte)));
-        }
-    }
-
-    private IEnumerator ReturnAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        RequestReturn();
-    }
-
-    private void RequestReturn()
-    {
+        ResetPhysicsAndTransform();
+        ResetColor();
         ReturnRequested?.Invoke(this);
     }
-
+    
     private void OnDisable()
     {
-        if (_returnCoroutine != null)
+        if (ReturnCoroutine != null)
         {
-            StopCoroutine(_returnCoroutine);
-            _returnCoroutine = null;
+            StopCoroutine(ReturnCoroutine);
+            SetReturnCoroutine(null);
         }
     }
 }

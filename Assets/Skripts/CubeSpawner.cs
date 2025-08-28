@@ -63,11 +63,8 @@ public class GameObjectSpawner : MonoBehaviour
 
     private void OnReleaseCube(Cube cube)
     {
-        cube.ResetPhysicsAndTransform();
-
         cube.ReturnRequested -= HandleReturnRequested;
         cube.gameObject.SetActive(false);
-        cube.ResetColor();
     }
 
     private void OnDestroyCube(Cube cube)
