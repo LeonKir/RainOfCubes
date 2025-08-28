@@ -5,10 +5,12 @@ public class Cube : MonoBehaviour
 {
     public event Action<Cube> ReturnRequested;
 
+    [SerializeField] private Color _color = Color.white;
+
     private bool _isColorChangedThisLife;
     private Coroutine _returnCoroutine;
-
-    [SerializeField] private Color _color = Color.white;
+    private Renderer _renderer;
+    private Rigidbody _rigidbody;
 
     public bool IsColorChangedThisLife
     {
@@ -32,8 +34,12 @@ public class Cube : MonoBehaviour
         _returnCoroutine = returnCoroutine;
     }
 
-    private Renderer _renderer;
-    private Rigidbody _rigidbody;
+    public void RequestReturn()
+    {
+        ResetPhysicsAndTransform();
+        ResetColor();
+        ReturnRequested?.Invoke(this);
+    }
 
     private void ResetColor()
     {
@@ -64,13 +70,6 @@ public class Cube : MonoBehaviour
     {
         SetColorChangedThisLife(false);
         SetReturnCoroutine(null);
-    }
-
-    public void RequestReturn()
-    {
-        ResetPhysicsAndTransform();
-        ResetColor();
-        ReturnRequested?.Invoke(this);
     }
     
     private void OnDisable()

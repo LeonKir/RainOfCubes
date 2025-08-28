@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Ground : MonoBehaviour
 {
+    [SerializeField] private ColorChanger _colorChanger;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -11,13 +12,9 @@ public class Ground : MonoBehaviour
 
         if (collision.collider.TryGetComponent<Cube>(out Cube cube))
         {
-
-            Renderer renderer = cube.GetComponent<Renderer>();
-
-            if (!cube.IsColorChangedThisLife && renderer != null)
+            if (!cube.IsColorChangedThisLife)
             {
-                renderer.material.color = UnityEngine.Random.ColorHSV();
-                cube.SetColorChangedThisLife(true);
+                _colorChanger.ChangeColor(cube);
             }
 
             if (cube.ReturnCoroutine == null)
