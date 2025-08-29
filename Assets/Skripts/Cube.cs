@@ -4,14 +4,26 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
-    public event Action<Cube> ReturnRequested;
-
     [SerializeField] private Color _color = Color.white;
 
     private bool _isColorChangedThisLife;
     private Coroutine _returnCoroutine;
     private Renderer _renderer;
     private Rigidbody _rigidbody;
+    
+    public event Action<Cube> ReturnRequested;
+
+    public bool IsColorChangedThisLife
+    {
+        get => _isColorChangedThisLife;
+        private set => _isColorChangedThisLife = value;
+    }
+
+    public Coroutine ReturnCoroutine
+    {
+        get => _returnCoroutine;
+        private set => _returnCoroutine = value;
+    }
 
     private void Awake()
     {
@@ -34,21 +46,9 @@ public class Cube : MonoBehaviour
         }
     }
 
-    public bool IsColorChangedThisLife
-    {
-        get => _isColorChangedThisLife;
-        private set => _isColorChangedThisLife = value;
-    }
-
     public void SetColorChangedThisLife(bool colorChangedThisLife)
     {
         _isColorChangedThisLife = colorChangedThisLife;
-    }
-
-    public Coroutine ReturnCoroutine
-    {
-        get => _returnCoroutine;
-        private set => _returnCoroutine = value;
     }
 
     public void SetReturnCoroutine()
@@ -69,6 +69,7 @@ public class Cube : MonoBehaviour
     private IEnumerator ReturnAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+
         RequestReturn();
     }
 

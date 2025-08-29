@@ -79,6 +79,7 @@ public class CubeSpawner : MonoBehaviour
         while (enabled)
         {
             SpawnCube();
+
             yield return waitForSeconds;
         }
     }
@@ -97,6 +98,7 @@ public class CubeSpawner : MonoBehaviour
     {
         Vector3 min = box.bounds.min;
         Vector3 max = box.bounds.max;
+
         return new Vector3(
             UnityEngine.Random.Range(min.x, max.x),
             UnityEngine.Random.Range(min.y, max.y),

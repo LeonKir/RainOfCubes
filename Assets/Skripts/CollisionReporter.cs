@@ -1,15 +1,15 @@
 using System.Collections;
 using UnityEngine;
 
-public class CollisionEnter : MonoBehaviour
+public class CollisionReporter : MonoBehaviour
 {
     [SerializeField] private ColorChanger _colorChanger;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.TryGetComponent<Cube>(out Cube cube))
+        if (collision.collider.TryGetComponent(out Cube cube))
         {
-            if (!cube.IsColorChangedThisLife)
+            if (cube.IsColorChangedThisLife == false)
             {
                 _colorChanger.ChangeColor(cube);
             }
