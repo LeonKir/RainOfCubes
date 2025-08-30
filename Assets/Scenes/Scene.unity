@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &213758581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 213758583}
+  - component: {fileID: 213758582}
+  m_Layer: 0
+  m_Name: ColorChanger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &213758582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213758581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 587a81bd5cb8a7f4d9c8e37461a53dd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &213758583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213758581}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.2664185, y: -12.044983, z: 36.210773}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &469393035
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,50 +259,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &722307919
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 722307921}
-  - component: {fileID: 722307920}
-  m_Layer: 0
-  m_Name: ColorChanger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &722307920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 722307919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 587a81bd5cb8a7f4d9c8e37461a53dd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &722307921
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 722307919}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2664185, y: -12.044983, z: 36.210773}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1131293952
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +342,6 @@ GameObject:
   - component: {fileID: 1509256999}
   - component: {fileID: 1509256998}
   - component: {fileID: 1509257001}
-  - component: {fileID: 1509257002}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Ground
@@ -436,19 +435,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7500c93e788c24e44a45d39aa0cc1ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1509257002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509256997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a48a6ddf858cdc048bf3233202ea1b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _colorChanger: {fileID: 722307920}
 --- !u!1 &1668743024
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +448,6 @@ GameObject:
   - component: {fileID: 1668743026}
   - component: {fileID: 1668743025}
   - component: {fileID: 1668743029}
-  - component: {fileID: 1668743030}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Ground
@@ -569,19 +554,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7500c93e788c24e44a45d39aa0cc1ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1668743030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1668743024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a48a6ddf858cdc048bf3233202ea1b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _colorChanger: {fileID: 722307920}
 --- !u!1 &1951126432
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +567,6 @@ GameObject:
   - component: {fileID: 1951126434}
   - component: {fileID: 1951126433}
   - component: {fileID: 1951126437}
-  - component: {fileID: 1951126438}
   m_Layer: 0
   m_Name: Plane (1)
   m_TagString: Ground
@@ -702,19 +673,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7500c93e788c24e44a45d39aa0cc1ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1951126438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1951126432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a48a6ddf858cdc048bf3233202ea1b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _colorChanger: {fileID: 722307920}
 --- !u!1 &2135538255
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,4 +777,4 @@ SceneRoots:
   - {fileID: 1131293955}
   - {fileID: 1668743028}
   - {fileID: 1951126436}
-  - {fileID: 722307921}
+  - {fileID: 213758583}

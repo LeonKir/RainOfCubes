@@ -37,7 +37,7 @@ public class Cube : MonoBehaviour
 
     private void OnEnable()
     {
-        SetColorChangedThisLife(false);
+        SetHasCollided(false);
     }
 
     private void OnDisable()
@@ -48,7 +48,7 @@ public class Cube : MonoBehaviour
         }
     }
 
-    public void SetColorChangedThisLife(bool hasCollided)
+    public void SetHasCollided(bool hasCollided)
     {
         _hasCollided = hasCollided;
     }

@@ -4,17 +4,27 @@ public class CollisionReporter : MonoBehaviour
 {
     [SerializeField] private ColorChanger _colorChanger;
 
+    private Cube _cube;
+
+    private void Awake()
+    {
+        _cube = GetComponent<Cube>();
+
+        if (_colorChanger == null)
+            _colorChanger = FindObjectOfType<ColorChanger>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.TryGetComponent(out Cube cube))
+        if (collision.collider.TryGetComponent(out Ground ground))
         {
-            if (cube.HasCollided == false)
+            if (_cube.HasCollided == false)
             {
-                _colorChanger.ChangeColor(cube);
+                _colorChanger.ChangeColor(_cube);
             }
 
-            if (cube.ReturnCoroutine == null)
-                cube.SetReturnCoroutine();
+            if (_cube.ReturnCoroutine == null)
+                _cube.SetReturnCoroutine();
         }
     }
 }

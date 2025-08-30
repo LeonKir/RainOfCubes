@@ -10,7 +10,7 @@ public class ColorChanger : MonoBehaviour
         {
             renderer.material.color = UnityEngine.Random.ColorHSV();
 
-            cube.SetColorChangedThisLife(true);
+            cube.SetHasCollided(true);
         }
     }
 }
