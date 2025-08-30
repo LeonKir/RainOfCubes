@@ -49,10 +49,10 @@ public class CubeSpawner : MonoBehaviour
     {
         cube.transform.position = GetRandomPointInBox(_boxCollider);
 
-        if (cube.TryGetComponent(out Rigidbody rb))
+        if (cube.TryGetComponent(out Rigidbody rigidbody))
         {
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+            rigidbody.velocity = Vector3.zero;
+            rigidbody.angularVelocity = Vector3.zero;
         }
 
         cube.ReturnRequested -= HandleReturnRequested;

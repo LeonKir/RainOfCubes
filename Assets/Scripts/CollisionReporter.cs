@@ -8,7 +8,7 @@ public class CollisionReporter : MonoBehaviour
     {
         if (collision.collider.TryGetComponent(out Cube cube))
         {
-            if (cube.IsColorChangedThisLife == false)
+            if (cube.HasCollided == false)
             {
                 _colorChanger.ChangeColor(cube);
             }

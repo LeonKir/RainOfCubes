@@ -2,21 +2,23 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Renderer))]
+
 public class Cube : MonoBehaviour
 {
     [SerializeField] private Color _color = Color.white;
 
-    private bool _isColorChangedThisLife;
+    private bool _hasCollided;
     private Coroutine _returnCoroutine;
     private Renderer _renderer;
     private Rigidbody _rigidbody;
 
     public event Action<Cube> ReturnRequested;
 
-    public bool IsColorChangedThisLife
+    public bool HasCollided
     {
-        get => _isColorChangedThisLife;
-        private set => _isColorChangedThisLife = value;
+        get => _hasCollided;
+        private set => _hasCollided = value;
     }
 
     public Coroutine ReturnCoroutine
@@ -46,9 +48,9 @@ public class Cube : MonoBehaviour
         }
     }
 
-    public void SetColorChangedThisLife(bool colorChangedThisLife)
+    public void SetColorChangedThisLife(bool hasCollided)
     {
-        _isColorChangedThisLife = colorChangedThisLife;
+        _hasCollided = hasCollided;
     }
 
     public void SetReturnCoroutine()

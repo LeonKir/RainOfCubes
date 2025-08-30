@@ -6,7 +6,7 @@ public class ColorChanger : MonoBehaviour
     {
         var renderer = cube.GetComponent<Renderer>();
 
-        if (cube.IsColorChangedThisLife == false && renderer != null)
+        if (cube.HasCollided == false && renderer != null)
         {
             renderer.material.color = UnityEngine.Random.ColorHSV();
 
