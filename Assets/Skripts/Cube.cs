@@ -10,7 +10,7 @@ public class Cube : MonoBehaviour
     private Coroutine _returnCoroutine;
     private Renderer _renderer;
     private Rigidbody _rigidbody;
-    
+
     public event Action<Cube> ReturnRequested;
 
     public bool IsColorChangedThisLife
